@@ -42,5 +42,21 @@
         <delete dir="${build.generated.sources.dir}/jax-ws/service"/>
         <delete dir="${build.generated.dir}/jax-wsCache/LogInService"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-LogInService"/>
+    <target name="wsimport-client-IMBService" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/IMBService"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/IMBService" destdir="${build.generated.dir}/jax-wsCache/IMBService" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/IMBService/wsdl/localhost_8080/IMBService/IMBService.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/IMBService/IMBService?wsdl" xnocompile="true" xendorsed="true" package="IMBService">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/IMBService/wsdl/localhost_8080/IMBService/IMBService.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/IMBService"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/IMBService">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-IMBService" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/IMBService"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/IMBService"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-LogInService, wsimport-client-IMBService"/>
 </project>

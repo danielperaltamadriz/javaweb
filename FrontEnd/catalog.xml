@@ -2,4 +2,6 @@
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
     <system systemId="http://localhost:8080/LoginService/LogInService?wsdl" uri="src/conf/xml-resources/web-service-references/LogInService/wsdl/localhost_8080/LoginService/LogInService.wsdl"/>
     <system systemId="http://localhost:8080/LoginService/LogInService?xsd=1" uri="src/conf/xml-resources/web-service-references/LogInService/wsdl/localhost_8080/LoginService/LogInService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/IMBService/IMBService?wsdl" uri="src/conf/xml-resources/web-service-references/IMBService/wsdl/localhost_8080/IMBService/IMBService.wsdl"/>
+    <system systemId="http://localhost:8080/IMBService/IMBService?xsd=1" uri="src/conf/xml-resources/web-service-references/IMBService/wsdl/localhost_8080/IMBService/IMBService.xsd_1.xsd"/>
 </catalog>
